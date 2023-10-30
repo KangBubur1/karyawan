@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
 
     <title>Healthy Food!</title>
   </head>
-  <body>
+  <body data-bs-theme="light">
 
     <section class="container-fluid ">
         <div class="row" style="height: 100vh;" >
@@ -139,10 +139,10 @@
                                     <h2>Performance Karyawan Tetap C & D</h2>
                                     <table class="table table-hover text-center">
                                         <tr class="text-center">
-                                            <th class="table-primary">Foto</th>
-                                            <th class="table-primary">NIK</th>
-                                            <th class="table-primary">Nama</th>
-                                            <th class="table-primary">Position</th>
+                                            <th >Foto</th>
+                                            <th >NIK</th>
+                                            <th >Nama</th>
+                                            <th >Position</th>
                                         </tr>
                                         <?php
                                             require('Require/connection.php');
@@ -177,10 +177,10 @@
                                 <h2>Performance Karyawan Tidak Tetap C & D</h2>
                                     <table class="table table-hover text-center">
                                         <tr class="text-center">
-                                            <th class="table-primary">Foto</th>
-                                            <th class="table-primary">NIK</th>
-                                            <th class="table-primary">Nama</th>
-                                            <th class="table-primary">Position</th>
+                                            <th>Foto</th>
+                                            <th>NIK</th>
+                                            <th>Nama</th>
+                                            <th>Position</th>
                                         </tr>
                                         <?php
                                             require('Require/connection.php');
@@ -224,7 +224,8 @@
         </div>
     </section>
 
-
+    <button class="custom-theme" onclick="SetTheme()" id="theme">       
+    </button>                               
     <!-- Optional JavaScript -->
     <script src="js/script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

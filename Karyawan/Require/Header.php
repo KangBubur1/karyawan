@@ -1,6 +1,6 @@
-<header class="row h-auto custom-header shadow-lg ">
+<header class="row h-auto custom-header shadow-lg " style="background-color: var(--bs-body-bg);">
 
-    <div class="col p-4 border d-flex justify-content-between justify-content-md-end">
+    <div class="col p-4 d-flex justify-content-between justify-content-md-end">
 
         <!-- HAMBURGER START -->
         <button class="custom-hamburger d-md-none">

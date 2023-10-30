@@ -16,33 +16,23 @@ window.addEventListener('resize', function() {
     }
 });
 
-// // Function Hitung
-// function start_count(){
-//     interval = setInterval("calculateTotal()",1);
-// }
-// function calculateTotal() {
-//     a = document.performa.responsibility.value;
-//     b = document.performa.teamwork.value;
-//     c = document.performa.management_time.value;
-    
-//     total = parseInt((a*0.3)+(b*0.3)+(c*0.4));
+// Dark mode
+function SetTheme() {
+    const theme = document.body.dataset.bsTheme;
 
-
-//     if(total<40){
-//                         grade="D";
-//                     }else if(total<=59){
-//                         grade="C";
-//                     }else if(total<=79){
-//                         grade="B";
-//                     }else if(total<=100){
-//                         grade="A";
-//                     }
-//     document.performa.total.value = total;
-//     document.performa.grade.value = grade;
-//     console.log(total);
-    
-// }
-// function stop_count(){
-//     clearInterval(interval);
-// }
-
+    if (theme === "light") {
+        document.body.dataset.bsTheme = "dark";
+        document.getElementById("theme").innerHTML = `
+            <span class="material-symbols-outlined">
+                dark_mode
+            </span>
+        `;
+    } else {
+        document.body.dataset.bsTheme = "light";
+        document.getElementById("theme").innerHTML = `
+            <span class="material-symbols-outlined">
+                lightbulb
+            </span>
+        `;
+    }
+}

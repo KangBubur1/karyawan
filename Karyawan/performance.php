@@ -70,7 +70,7 @@ require("Require/CRUD.php");
       function stop_count(){
               clearInterval(interval);
           }
-      </script>;
+      </script>
 		<!-- Function Hitung End -->
 
     <title>Healthy Food!</title>
