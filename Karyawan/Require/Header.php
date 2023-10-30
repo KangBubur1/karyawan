@@ -1,43 +1,44 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<header class="row h-auto custom-header shadow-lg ">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <div class="col p-4 border d-flex justify-content-between justify-content-md-end">
 
-    <!-- Font Family -->
-    
-    
-    <!-- Material -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <!-- HAMBURGER START -->
+        <button class="custom-hamburger d-md-none">
+            <div class="bar"></div>
+        </button>
+        <!-- HAMBURGER END -->
 
-    <title>Healthy Food!</title>
-  </head>
-  <body>
-      
-            <header class="header">
-                <div class="header-left">
-                    <div class="search-bar">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <span class="material-symbols-outlined"><a href="index.php">
-search
-</a></span>
-                    </div>
-                </div>
+        <!-- NOTIFICATION START -->
+        <div>
+            <span class="material-symbols-outlined">
+            notifications
+            </span>
+        </div>
+        <!-- NOTIFICATION END -->
 
-                <div class="header-right">
-                <span class="material-symbols-outlined">
-                notifications
-                </span>
-                </div>
-        </header>
+    </div>
+</header>
 
-  </body>
-</html>
+<!-- MOBILE NAV START -->
+<aside>
+    <nav class="mobile-nav">
+        <ul class="custom-sidebar-list">
+            <li>
+                <a href="./home.php" class="text-light custom-sidebar-list fs-4">Home</a>
+                <ul>
+                    <li>
+                        <a href="#" class="text-light fs-5 fw-light">Tetap</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-light fs-5 fw-light">Tidak Tetap</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="custom-sidebar-list">
+                <a href="./performance.php" class="text-light custom-sidebar-list fs-4">Perfomance</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+<!-- MOBILE NAV END -->
+
