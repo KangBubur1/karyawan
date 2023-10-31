@@ -16,23 +16,24 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Dark mode
-function SetTheme() {
-    const theme = document.body.dataset.bsTheme;
 
-    if (theme === "light") {
-        document.body.dataset.bsTheme = "dark";
-        document.getElementById("theme").innerHTML = `
-            <span class="material-symbols-outlined">
-                dark_mode
-            </span>
-        `;
-    } else {
-        document.body.dataset.bsTheme = "light";
-        document.getElementById("theme").innerHTML = `
-            <span class="material-symbols-outlined">
-                lightbulb
-            </span>
-        `;
+const keyword = document.getElementById('keyword');
+const tombolCari = document.getElementById('tombol-cari');
+const container = document.getElementById('container');
+
+keyword.addEventListener('keyup', function() {
+    
+    // Buat objek ajax
+    const xhr = new XMLHttpRequest();
+
+    // Cek kesiapan ajax
+    xhr.onreadystatechange = function() {
+        if ( xhr.readyState == 4 && xhr.status == 200) {
+            container.innerHTML = xhr.responseText;
+        }
     }
-}
+
+    xhr.open('GET', 'ajax/Karyawan_tetap.php?keyword=' + keyword.value, true)
+    xhr.send()
+
+})

@@ -20,7 +20,7 @@
 
     <title>Healthy Food!</title>
   </head>
-  <body data-bs-theme="light">
+  <body>
 
     <section class="container-fluid ">
         <div class="row" style="height: 100vh;" >
@@ -138,11 +138,11 @@
                                 <div class="col ">
                                     <h2>Performance Karyawan Tetap C & D</h2>
                                     <table class="table table-hover text-center">
-                                        <tr class="text-center">
-                                            <th >Foto</th>
-                                            <th >NIK</th>
-                                            <th >Nama</th>
-                                            <th >Position</th>
+                                        <tr class="text-center" id="custom-theader">
+                                            <th class="table-primary" >Foto</th>
+                                            <th class="table-primary" >NIK</th>
+                                            <th class="table-primary" >Nama</th>
+                                            <th class="table-primary" >Position</th>
                                         </tr>
                                         <?php
                                             require('Require/connection.php');
@@ -166,7 +166,11 @@
                                                     <?php
                                                 }
                                             } else {
-                                                echo 'No data found';
+                                                ?>
+                                                    <tr>
+                                                        <td colspan="4" align="center"><i>Data Belum Ada</i></td>
+                                                    </tr>
+                                            <?php
                                             }
 
                                             mysqli_close($con);
@@ -177,10 +181,10 @@
                                 <h2>Performance Karyawan Tidak Tetap C & D</h2>
                                     <table class="table table-hover text-center">
                                         <tr class="text-center">
-                                            <th>Foto</th>
-                                            <th>NIK</th>
-                                            <th>Nama</th>
-                                            <th>Position</th>
+                                            <th class="table-primary">Foto</th>
+                                            <th class="table-primary">NIK</th>
+                                            <th class="table-primary">Nama</th>
+                                            <th class="table-primary">Position</th>
                                         </tr>
                                         <?php
                                             require('Require/connection.php');
@@ -204,7 +208,11 @@
                                                     <?php
                                                 }
                                             } else {
-                                                echo 'No data found';
+                                                ?>
+                                                    <tr>
+                                                        <td colspan="4" align="center"><i>Data Belum Ada</i></td>
+                                                    </tr>
+                                            <?php
                                             }
 
                                             mysqli_close($con);
@@ -224,10 +232,41 @@
         </div>
     </section>
 
-    <button class="custom-theme" onclick="SetTheme()" id="theme">       
-    </button>                               
+    
+    <button class="custom-theme" onclick="toggleTheme()" id="theme">
+        <span class="material-symbols-outlined" id="theme-icon">lightbulb</span>
+    </button>                
+    
     <!-- Optional JavaScript -->
+    <script>
+        // Dark mode
+        let theme = localStorage.getItem('theme') || 'light';
+        
+        function toggleTheme() {
+        if (theme === 'light') {
+            theme = 'dark';
+        } else {
+            theme = 'light';
+        }
+        
+        localStorage.setItem("theme", theme);
+        document.body.dataset.bsTheme = theme;
+        
+        // Update the theme icon
+        const themeIcon = document.getElementById("theme-icon");
+        themeIcon.innerText = theme === "light" ? "lightbulb" : "dark_mode";
+        
+        }
+        
+        // Check for the user's preferred color scheme
+        if (localStorage.getItem('theme') === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme = 'dark';
+        }
+        
+        document.body.dataset.bsTheme = theme;
+    </script>
     <script src="js/script.js"></script>
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

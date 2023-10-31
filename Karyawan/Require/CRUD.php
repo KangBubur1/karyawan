@@ -198,7 +198,7 @@
                         <th class="table-primary">Aksi</th>
                     </tr>
                             <?php
-                    include 'Require/connection.php';
+                    include 'connection.php';
                     $sql = "SELECT * FROM performance";
                     $result = mysqli_query($con,$sql);
                     if(mysqli_num_rows($result)>0){
@@ -243,7 +243,7 @@
 <?php
     // EDIT
     function edit($con){
-        include 'Require/connection.php';
+        include 'connection.php';
         $id 	= $_GET['id'];
         $sql 	= "SELECT * FROM performance WHERE nik ='$id'";
         $result = mysqli_query($con,$sql);
@@ -251,7 +251,7 @@
             $status_kerja = $data['status_kerja']; 
         
 ?>
-    <form action="" name="performa" method="POST" enctype="multipart/form-data">
+    <form action="" name="performa" method="POST" enctype="multipart/form-data" >
         <div class="container mt-3 ">
 
             <!-- INPUT TOP ROW -->
@@ -268,13 +268,10 @@
             </div>
             <div class="col-12  col-sm-6 d-flex justify-content-sm-end align-items-center">
                 <input type="submit" 
-                        name="insert" 
-                        value="Insert" 
-                        class="btn custom-btn me-4"/>
-                <input type="submit" 
-                        name="Update" 
-                        value="Update" 
-                        class="btn custom-btn me-4"/>
+                    name="Update" 
+                    value="Update"
+                    class="btn custom-btn me-4"
+                    />
                 <input type="button" 
                         value="Clear" 
                         onclick="window.location.href='performance.php'"
@@ -418,7 +415,7 @@
     </form>
 <?php
         }
-        if(isset($_POST['update'])){
+        if(isset($_POST['Update'])){
             $id 				= $_POST['id'];
             $fotoold			= $_POST['old'];
             $fotobaru			= $_FILES['foto']['tmp_name'];

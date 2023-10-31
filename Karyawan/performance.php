@@ -124,9 +124,6 @@ require("Require/CRUD.php");
                             edit($con);
                             view($con);
                             break;
-                          case "hapus":
-                            hapus($con);
-                            break;
                           default:
                             echo "<h3>Aksi <i>".$_GET['aksi']."</i> Belum Tersedia</h3>";
                             add($con);
@@ -149,8 +146,37 @@ require("Require/CRUD.php");
         </div>
     </section>
 
-
+    <button class="custom-theme" onclick="toggleTheme()" id="theme">
+        <span class="material-symbols-outlined" id="theme-icon">lightbulb</span>
+    </button> 
     <!-- Optional JavaScript -->
+    <script>
+        // Dark mode
+        let theme = localStorage.getItem('theme') || 'light';
+        
+        function toggleTheme() {
+        if (theme === 'light') {
+            theme = 'dark';
+        } else {
+            theme = 'light';
+        }
+        
+        localStorage.setItem("theme", theme);
+        document.body.dataset.bsTheme = theme;
+        
+        // Update the theme icon
+        const themeIcon = document.getElementById("theme-icon");
+        themeIcon.innerText = theme === "light" ? "lightbulb" : "dark_mode";
+        
+        }
+        
+        // Check for the user's preferred color scheme
+        if (localStorage.getItem('theme') === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        theme = 'dark';
+        }
+        
+        document.body.dataset.bsTheme = theme;
+    </script>
     <script src="js/script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

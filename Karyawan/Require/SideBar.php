@@ -20,7 +20,7 @@
                     <a href="./home.php" class="text-light custom-sidebar-list fs-4">Home</a>
                         <ul>
                         <li>
-                            <a href="#" class="text-light fs-5 fw-light">Tetap</a>
+                            <a href="./Karyawan_tetap.php" class="text-light fs-5 fw-light">Tetap</a>
                         </li>
                         <li>
                             <a href="#" class="text-light fs-5 fw-light">Tidak Tetap</a>
