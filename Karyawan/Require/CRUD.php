@@ -273,8 +273,11 @@
                     onclick="window.location.href='performance.php'"
                     class="btn custom-btn me-4"
                     />
+                <input type="reset" 
+                                value="Clear"
+                                class="btn custom-btn me-4"/>
                 <input type="button" 
-                        value="Clear" 
+                        value="Cancel" 
                         onclick="window.location.href='performance.php'"
                         class="btn btn-outline-danger">
             </div>
@@ -507,7 +510,7 @@
                                 class="btn custom-btn me-4"
                                 hidden/>
                         <input type="button" 
-                                value="Clear" 
+                                value="Cancel" 
                                 onclick="window.location.href='performance.php'"
                                 class="btn btn-outline-danger"
                                 >

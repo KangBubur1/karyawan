@@ -15,13 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         or die(mysqli_error($con)); 
         
             $num = mysqli_fetch_array($result); 
-                
-            if($num > 0) { 
+            
+            if ($num != 0) {
                 header("Location:../home.php");
-            } 
-            else { 
-                echo "Wrong User id or password"; 
             }
+            else {
+                header("Location:../index.php");
+                echo '<script type="text/javascript">toastr.error("Failed to Input")</script>';
+            }
+            
     } else {
         echo "Form data not submitted";
     }
