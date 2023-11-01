@@ -1,3 +1,7 @@
+<?php
+    require('Require/DataTabel.php');
+?>
+
 <!doctype html>
 <html lang="en" >
   <head>
@@ -20,7 +24,7 @@
 
     <title>Healthy Food!</title>
   </head>
-  <body>
+  <body style="overflow-y:hidden;">
 
     <section class="container-fluid ">
         <div class="row" style="height: 100vh;" >
@@ -48,7 +52,9 @@
                             <h4>DASHBOARD</h4>
                         </div>
                         <div class="p-3">
-                            <button>ICON KALENDER</button>
+                            <span class="material-symbols-outlined">
+                            calendar_month
+                            </span>
                         </div>
                     </div>
 
@@ -66,60 +72,70 @@
                                     </div>
                                     <div class="row justify-content-between">
                                         <div class="col-12">
-                                            [Date picker]
+                                            <p id="currentDate" class="fs-5"></p>
                                         </div>
                                         <div class="col-12">
-                                            Jumlah
+                                            <p class="fs-5">Jumlah : <?= $totalKaryawan; ?></p>
                                         </div>
                                         <div class="col-12">
-                                            Karyawan Tetap
+                                            <p class="fs-5">Karyawan Tetap : <?= $totalTetap; ?></p>
                                         </div>
                                         <div class="col-12">
-                                            Karyawan Tidak Tetap
+                                            <p class="fs-5">Karyawan Tidak Tetap : <?= $totalTidakTetap; ?></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <br>
+                                            <br>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col col-xl-3 mb-4 cust-card d-flex flex-column justify-content-between pt-2 pb-3 ps-3 overflow-y-auto">
                                     <div class="d-flex justify-content-between">
-                                    <h2>Jumlah Karyawan</h2>
+                                    <h2>Karyawan Tetap</h2>
                                         <span class="material-symbols-outlined">
                                             bolt
                                         </span>
                                     </div>
                                     <div class="row justify-content-between">
                                         <div class="col-12">
-                                            [Date picker]
+                                            <p class="fs-5"><u>Tahun:2023</u></p>
                                         </div>
                                         <div class="col-12">
-                                            Jumlah
+                                            <p class="fs-5">A : <?= $totalA; ?></p>
                                         </div>
                                         <div class="col-12">
-                                            Karyawan Tetap
+                                            <p class="fs-5">B : <?= $totalB; ?></p>
                                         </div>
                                         <div class="col-12">
-                                            Karyawan Tidak Tetap
+                                            <p class="fs-5">C : <?= $totalC; ?></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="fs-5">D : <?= $totalD; ?></p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col col-xl-3 mb-4 cust-card d-flex flex-column justify-content-between pt-2 pb-3 ps-3 overflow-y-auto">
                                     <div class="d-flex justify-content-between">
-                                        <h2>Jumlah Karyawan</h2>
+                                        <h2>Karyawan Tidak Tetap</h2>
                                         <span class="material-symbols-outlined">
                                             bolt
                                         </span>
                                     </div>
                                     <div class="row justify-content-between">
                                         <div class="col-12">
-                                            [Date picker]
+                                            <p class="fs-5"><u>Tahun:2023</u></p>
                                         </div>
                                         <div class="col-12">
-                                            Jumlah
+                                            <p class="fs-5">A : <?= $totalAtt; ?></p>
                                         </div>
                                         <div class="col-12">
-                                            Karyawan Tetap
+                                            <p class="fs-5">B : <?= $totalBtt; ?></p>
                                         </div>
                                         <div class="col-12">
-                                            Karyawan Tidak Tetap
+                                            <p class="fs-5">C : <?= $totalCtt; ?></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="fs-5">D : <?= $totalDtt; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -134,15 +150,15 @@
                     <div class="col-12  mt-3">
                         <div class="container custom-container-home-main ">
                             <!-- TABLE START -->
-                             <div class="row">
+                             <div class="row overflow-x-auto">
                                 <div class="col ">
                                     <h2>Performance Karyawan Tetap C & D</h2>
                                     <table class="table table-hover text-center">
                                         <tr class="text-center" id="custom-theader">
-                                            <th class="table-primary" >Foto</th>
-                                            <th class="table-primary" >NIK</th>
-                                            <th class="table-primary" >Nama</th>
-                                            <th class="table-primary" >Position</th>
+                                            <th class="table-secondary" >Foto</th>
+                                            <th class="table-secondary" >NIK</th>
+                                            <th class="table-secondary" >Nama</th>
+                                            <th class="table-secondary" >Position</th>
                                         </tr>
                                         <?php
                                             require('Require/connection.php');
@@ -181,10 +197,10 @@
                                 <h2>Performance Karyawan Tidak Tetap C & D</h2>
                                     <table class="table table-hover text-center">
                                         <tr class="text-center">
-                                            <th class="table-primary">Foto</th>
-                                            <th class="table-primary">NIK</th>
-                                            <th class="table-primary">Nama</th>
-                                            <th class="table-primary">Position</th>
+                                            <th class="table-secondary">Foto</th>
+                                            <th class="table-secondary">NIK</th>
+                                            <th class="table-secondary">Nama</th>
+                                            <th class="table-secondary">Position</th>
                                         </tr>
                                         <?php
                                             require('Require/connection.php');
@@ -238,6 +254,21 @@
     </button>                
     
     <!-- Optional JavaScript -->
+    <script>
+    // Get the current date
+    var currentDate = new Date();
+
+    // Get the date components (day, month, year)
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1; // Months are zero-based, so add 1
+    var year = currentDate.getFullYear();
+
+    // Create a string with the current date in a desired format
+    var dateStr = day + "/" + month + "/" + year;
+
+    // Get the HTML element by its ID and update its content
+    document.getElementById("currentDate").textContent = dateStr;
+</script>
     <script>
         // Dark mode
         let theme = localStorage.getItem('theme') || 'light';

@@ -20,7 +20,7 @@
 
     <title>Healthy Food!</title>
   </head>
-  <body>
+  <body style="overflow-y:hidden;">
 
     <section class="container-fluid ">
         <div class="row" style="height: 100vh;" >
@@ -45,12 +45,14 @@
 
 
 
-                    <div class="col-12   mt-4 d-flex justify-content-between">
+                    <div class="col-12 mt-4 d-flex justify-content-between">
                         <div class="p-3">
-                            <h4>Karyawan Tetap</h4>
+                            <h4>List Karyawan</h4>
                         </div>
                         <div class="p-3">
-                            <button>ICON KALENDER</button>
+                            <span class="material-symbols-outlined">
+                            calendar_month
+                            </span>
                         </div>
                     </div>
 
@@ -62,28 +64,29 @@
                         </form>
                     </div>
                     <div class="col-12  mb-5">
-                        <div class="container custom-container-home-main " >
-                            <div class="row" id="container">
+                        <div class="container custom-container-home-main" >
+                            <div class="row overflow-x-auto" id="container">
                                 <?php
                                     require 'Require/connection.php';
-                                    $query = "SELECT * FROM performance 
-                                            WHERE status_kerja = 'Tetap'";
+                                    $query = "SELECT * FROM performance";
                                     $result = mysqli_query($con, $query);
                                 ?>
                                 <table class="table table-hover text-center">
-                                        <tr class="text-center">
-                                            <th class="table-primary">NIK</th>
-                                            <th class="table-primary">Foto</th>
-                                            <th class="table-primary">Nama</th>
-                                            <th class="table-primary">Status Kerja</th>
-                                            <th class="table-primary">Position</th>
-                                            <th class="table-primary">Tanggal Penilaian</th>
-                                            <th class="table-primary">Responsibility</th>
-                                            <th class="table-primary">Teamwork</th>
-                                            <th class="table-primary">Management Time</th>
-                                            <th class="table-primary">Total</th>
-                                            <th class="table-primary">Grade</th>
-                                        </tr>
+                                        <thead class="sticky-top">
+                                            <tr class="text-center">
+                                                <th class="table-secondary">NIK</th>
+                                                <th class="table-secondary">Foto</th>
+                                                <th class="table-secondary">Nama</th>
+                                                <th class="table-secondary">Status Kerja</th>
+                                                <th class="table-secondary">Position</th>
+                                                <th class="table-secondary">Tanggal Penilaian</th>
+                                                <th class="table-secondary">Responsibility</th>
+                                                <th class="table-secondary">Teamwork</th>
+                                                <th class="table-secondary">Management Time</th>
+                                                <th class="table-secondary">Total</th>
+                                                <th class="table-secondary">Grade</th>
+                                            </tr>                                    
+                                        </thead>
                                         <?php
                                         while ($row = mysqli_fetch_assoc($result)) {
                                         ?>

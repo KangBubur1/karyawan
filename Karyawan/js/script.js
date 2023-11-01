@@ -16,7 +16,7 @@ window.addEventListener('resize', function() {
     }
 });
 
-
+// Live search
 const keyword = document.getElementById('keyword');
 const tombolCari = document.getElementById('tombol-cari');
 const container = document.getElementById('container');
@@ -37,3 +37,5 @@ keyword.addEventListener('keyup', function() {
     xhr.send()
 
 })
+
+// Navigate page

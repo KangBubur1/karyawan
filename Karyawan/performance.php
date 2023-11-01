@@ -38,6 +38,10 @@ require("Require/CRUD.php");
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    
     <!-- Function Hitung Start -->
     <script>
       function start_count(){
@@ -75,10 +79,10 @@ require("Require/CRUD.php");
 
     <title>Healthy Food!</title>
   </head>
-  <body>
+  <body style="overflow-y:hidden;">
 
-    <section class="container-fluid ">
-        <div class="row" style="height: 100vh;" >
+    <section class="container-fluid" >
+        <div class="row" >
 
         <!-- SIDEBAR START -->
         <?php
@@ -87,7 +91,7 @@ require("Require/CRUD.php");
         <!-- SIDEBAR END -->
 
         <!-- MAIN & HEADER START -->
-            <div class="col-md-9 col-xl-10 border">
+            <div class="col-md-9 col-xl-10">
                 
                 <!-- HEADER START -->
                 <?php
@@ -98,13 +102,13 @@ require("Require/CRUD.php");
                 <!-- MAIN START -->
                 <main class="main overflow-y-auto">
 
-                  <div class="col-12 d-flex justify-content-between">
+                  <div class="col-12 mt-4 d-flex justify-content-between">
                           <div class="p-3">
                               <h4>PERFORMANCE</h4>
                           </div>
-                          <div class="p-3">
-                              <button>ICON KALENDER</button>
-                          </div>
+                          <span class="material-symbols-outlined p-3">
+                          calendar_month
+                          </span>
                   </div>
 
 
@@ -123,6 +127,9 @@ require("Require/CRUD.php");
                           case "edit":
                             edit($con);
                             view($con);
+                            break;
+                          case "hapus":
+                            hapus($con);
                             break;
                           default:
                             echo "<h3>Aksi <i>".$_GET['aksi']."</i> Belum Tersedia</h3>";

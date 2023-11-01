@@ -165,10 +165,10 @@
             
             if ($result) {
                 // Insert successful
-                echo "Bikin Alert biar bagus.";
+                echo '<script type="text/javascript">toastr.success("Data Inputed")</script>';
             } else {
                 // Insert failed
-                echo "Error: " . mysqli_error($con);
+                echo '<script type="text/javascript">toastr.error("Failed to Input")</script>';
             }
         }       
         ?>
@@ -181,21 +181,21 @@
     function view($con){
     ?>
         <div class="container">
-            <div class="row">
+            <div class="row overflow-x-auto">
                 <table class="table table-hover text-center">
                     <tr class="text-center">
-                        <th class="table-primary">NIK</th>
-                        <th class="table-primary">Foto</th>
-                        <th class="table-primary">Nama</th>
-                        <th class="table-primary">Status Kerja</th>
-                        <th class="table-primary">Position</th>
-                        <th class="table-primary">Tanggal Penilaian</th>
-                        <th class="table-primary">Responsibility</th>
-                        <th class="table-primary">Teamwork</th>
-                        <th class="table-primary">Management Time</th>
-                        <th class="table-primary">Total</th>
-                        <th class="table-primary">Grade</th>
-                        <th class="table-primary">Aksi</th>
+                        <th class="table-secondary">NIK</th>
+                        <th class="table-secondary">Foto</th>
+                        <th class="table-secondary">Nama</th>
+                        <th class="table-secondary">Status Kerja</th>
+                        <th class="table-secondary">Position</th>
+                        <th class="table-secondary">Tanggal Penilaian</th>
+                        <th class="table-secondary">Responsibility</th>
+                        <th class="table-secondary">Teamwork</th>
+                        <th class="table-secondary">Management Time</th>
+                        <th class="table-secondary">Total</th>
+                        <th class="table-secondary">Grade</th>
+                        <th class="table-secondary">Aksi</th>
                     </tr>
                             <?php
                     include 'connection.php';
@@ -270,6 +270,7 @@
                 <input type="submit" 
                     name="Update" 
                     value="Update"
+                    onclick="window.location.href='performance.php'"
                     class="btn custom-btn me-4"
                     />
                 <input type="button" 
@@ -442,6 +443,7 @@
                             grade='$grade'
                             WHERE nik='$id'";
                 $result = mysqli_query($con,$sql);
+
             }
             else{
                 unlink('image/'.$fotoold);
@@ -462,6 +464,7 @@
                             WHERE nik='$id'";
                 $result = mysqli_query($con,$sql);
             }
+            echo '<script>window.location.href = "performance.php";</script>';
     }
 }
 ?>
@@ -507,7 +510,7 @@
                                 value="Clear" 
                                 onclick="window.location.href='performance.php'"
                                 class="btn btn-outline-danger"
-                                hidden>
+                                >
                     </div>
                 </div>
 
@@ -562,7 +565,7 @@
                         }
                         ?>
                         <label for="Status_kerja">Status Kerja</label>
-                        <select name="status_kerja" readonly>
+                        <select name="status_kerja" disabled>
                         <?php
                                 foreach ($enum_values as $value) {
                                     $selected = ($value == $status_kerja) ? 'selected' : '';

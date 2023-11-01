@@ -4,8 +4,9 @@ $keyword = $_GET["keyword"];
 var_dump($keyword);
 
 $query = "SELECT * FROM performance 
-          WHERE status_kerja = 'Tetap' AND (
+          WHERE (
               nik LIKE '%$keyword%'
+              OR status_kerja LIKE '%$keyword'
               OR nama LIKE '%$keyword%'
               OR position LIKE '%$keyword'
               OR tgl_penilaian LIKE '%$keyword'

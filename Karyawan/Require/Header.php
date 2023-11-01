@@ -27,10 +27,7 @@
                 <a href="./home.php" class="text-light custom-sidebar-list fs-4">Home</a>
                 <ul>
                     <li>
-                        <a href="#" class="text-light fs-5 fw-light">Tetap</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-light fs-5 fw-light">Tidak Tetap</a>
+                        <a href="./Karyawan_tetap.php" class="text-light fs-5 fw-light">Karyawan</a>
                     </li>
                 </ul>
             </li>
@@ -38,6 +35,12 @@
                 <a href="./performance.php" class="text-light custom-sidebar-list fs-4">Perfomance</a>
             </li>
         </ul>
+        
+        <!-- Logout -->
+        <div class="d-flex justify-content-between justify-content-evenly pt-5">
+            <button class="btn btn-danger"><a href="index.php" style="color:white; text-decoration:none;">Logout</a></button>
+        </div>
+
     </nav>
 </aside>
 <!-- MOBILE NAV END -->

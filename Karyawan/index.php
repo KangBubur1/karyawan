@@ -41,15 +41,15 @@
             <div class="col-12 col-sm-8 p-5 p-sm-3 custom-bg-right text-light shadow-lg d-flex flex-column justify-content-center ">
               <form action="Require/login.php" method="post" class="custom-bounce-right">
                 <h1 class="custom-h1 fw-bold pb-3 mt-2 mt-sm-0 text-light ">Sign In</h1>
-                <div class="d-flex flex-column w-75 mx-auto">
+                <div class="d-flex flex-column w-75  mx-auto">
                   <label for="username" class="mb-2 text-start custom-label">Username</label>
                   <input type="text" name="username" id="username" class="mb-2 custom-Input">
                 </div>
-                <div class="d-flex flex-column w-75 mx-auto">
+                <div class="d-flex flex-column w-75  mx-auto">
                   <label for="password" class="mb-2 text-start custom-label ">Password</label>
                   <input type="password" name="password" id="password" class="mb-2 custom-Input">
                 </div>
-                <button type="submit" name="login" class="btn custom-btn mt-4">Login</button>
+                <button type="submit" name="login" value="Login" class="btn custom-btn bg-white mt-4">Login</button>
               </form>
             </div>
           </div>
