@@ -133,7 +133,6 @@ select {
 .custom-Input {
     padding:10px;
     outline: none;
-
     border:0.5px solid rgba(211,211,211,0.9);
     border-radius:10px;
     width:75%;
@@ -143,6 +142,13 @@ select {
     border:1px solid black;
 }
 
+.custom-merah {
+    background-color: #FF6969;
+}
+
+.custom-yellow{
+    background-color:#FFCD4B;
+}
 /* LOGIN SECTION END */
 
 

@@ -21,7 +21,7 @@
                 <div class="col-12  col-sm-6 d-flex justify-content-sm-end align-items-center">
                     <input type="submit" 
                     name="insert" 
-                    value="Insert" 
+                    value="Simpan" 
                     class="btn custom-btn me-4"/>
                     <input type="button" 
                     value="Clear" 
@@ -124,7 +124,7 @@
                                     min="0" 
                                     placeholder="total" 
                                     required 
-                                    class="custom-Input
+                                    class="custom-Input custom-yellow
                                     "/>
                         </div>
                         <div class="d-flex align-items-center  mt-3 p-3 justify-content-between">
@@ -133,7 +133,7 @@
                                     name="grade"
                                     placeholder="grade"
                                     required 
-                                    class="custom-Input
+                                    class="custom-Input custom-merah
                                     "/>
                         </div>
                     </div>
@@ -498,7 +498,7 @@
                     <div class="col-12  col-sm-6 d-flex justify-content-sm-end align-items-center">
                         <input type="submit" 
                                 name="insert" 
-                                value="Insert" 
+                                value="Simpan" 
                                 class="btn custom-btn me-4"
                                 hidden/>
                         <input type="submit" 
