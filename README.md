@@ -40,6 +40,6 @@ Special thanks to:
 Feel free to explore, contribute, and provide feedback!
 
 🔗 [GitHub Repository](https://github.com/KangBubur1/uas_mobile)
-```
+
 
 ![image](https://github.com/KangBubur1/karyawan/assets/95082947/87521c61-c3a6-4c62-9f26-33ae2e0cd158)
